@@ -3,6 +3,7 @@ import Home from "../Pages/Home/Home";
 import Root from "../Root/Root";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import Details from "../Pages/Details/Details";
 
 
 
@@ -13,7 +14,12 @@ const router =createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: ()=> fetch("events.json")
+            },
+            {
+                path:"/details",
+                element:<Details></Details>
             },
             {
                 path:"/register",

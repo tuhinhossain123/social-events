@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/mNcW2MW/wedding.jpg",
+      "name": "Weddings Ceremony",
+      "short_description": "Wedding management involves the planning, coordination, and execution of various tasks and details to ensure a couple's wedding day runs smoothly and meets their expectations. This multifaceted role includes arranging venues, catering, decorations, entertainment, and logistics. Wedding managers often work closely with couples to understand their vision and preferences, helping them make informed decisions while staying within their budget. Their goal is to create a memorable and stress-free wedding experience for the couple and their guests, from start to finish.",
+      "price": 12000,
+      "button": "View-Details"
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/R2gms7C/anniversery.jpg",
+      "name": "Engagement Parties",
+      "short_description": "Engagement party management involves planning and coordinating a special event to mark a couple's engagement. This celebration brings together friends and family to share in the joy of the impending marriage. Tasks include selecting a venue, creating a guest list, designing invitations, arranging catering and entertainment, and ensuring the event runs smoothly. It's a prelude to the wedding festivities and an opportunity for the couple to announce their commitment to loved ones in a fun and memorable way.",
+      "price": 10000,
+      "button": "View Details"
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/HNwThCV/birthday.jpg",
+      "name": "Birthday Parties",
+      "short_description": "Managing birthday parties involves coordinating various elements to ensure a successful celebration. This includes selecting a venue, setting a budget, creating a guest list, choosing a theme, arranging decorations, planning activities and games, organizing food and drinks, and overseeing the overall flow of the event. Effective communication and attention to detail are key to ensuring the birthday person and their guests have a memorable and enjoyable experience.",
+      "price": 2000,
+      "button": "View Details"
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/Fs5MdM6/retaietment.jpg",
+      "name": " Retirement Parties",
+      "short_description": "Retirement party management entails organizing and overseeing all the details of a celebratory event marking an individual's transition from work life to retirement. This includes selecting a suitable venue, planning the menu, arranging entertainment, sending out invitations, and ensuring a smooth flow of activities throughout the celebration. The goal is to create a heartfelt and memorable experience that honors the retiree's career while allowing them to relax and enjoy their newfound freedom.",
+      "price": 5000,
+      "button": "View Details"
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/M5Brkzq/baby-shower.jpg",
+      "name": "Baby shower parties",
+      "short_description": "Managing a baby shower party involves planning, organizing, and executing a memorable event to celebrate the impending arrival of a new baby. Key tasks in baby shower party management include.Overall, successful baby shower party management involves attention to detail, creativity, and thoughtful consideration of the parents-to-be and guests to make the celebration a special and enjoyable experience.",
+      "price": 4000,
+      "button": "View Details"
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/V2R4DHQ/anniversery-2.jpg",
+      "name": "Anniversaries parties",
+      "short_description": "Anniversary party management is the art of orchestrating unforgettable events to commemorate important milestones in people's lives or a company's history. This includes meticulous planning, coordinating venues, catering, decorations, entertainment, and ensuring every detail aligns with the celebrants' or organization's vision. Whether it's a romantic wedding anniversary, a milestone birthday, or a corporate achievement, anniversary party managers bring creativity, organization, and expertise to ensure the occasion is a resounding success",
+      "price": 8000,
+      "button": "View Details"
+    }
+  ]
+  
