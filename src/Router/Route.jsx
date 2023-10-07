@@ -15,11 +15,12 @@ const router =createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                loader: ()=> fetch("events.json")
+                loader: ()=> fetch("./events.json")
             },
             {
-                path:"/details",
-                element:<Details></Details>
+                path:"/details/:id",
+                element:<Details></Details>,
+                loader: ()=> fetch("../events.json")
             },
             {
                 path:"/register",
