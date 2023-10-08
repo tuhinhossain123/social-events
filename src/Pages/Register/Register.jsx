@@ -1,24 +1,29 @@
-import { useContext } from "react";
+/* eslint-disable no-constant-condition */
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [passError, setPassError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        toast("User Registration successfully")
+        toast("User Registration successfully");
       })
       .catch((error) => {
         console.error(error);
+        if (!/[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
+        setPassError("fhasdhfbjashdfbhasfb");
+        }
       });
   };
   return (
@@ -65,6 +70,7 @@ const Register = () => {
                   className="input input-bordered"
                   required
                 />
+              <p>{passError}</p>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
