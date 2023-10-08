@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex flex-col md:flex-row space-x-6 py-5 justify-between items-center">
-        <h2 className="text-xl font-serif font-semibold text-orange-500">Wedding  Events</h2>
+        <h2 className="text-xl font-serif font-semibold text-orange-500">Social Events</h2>
         <ul className="flex flex-row md:flex-row pr-5 gap-10">
           <li>
             <NavLink
@@ -33,6 +33,34 @@ const Navbar = () => {
               }
             >
              Details
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-slate-600 underline font-bold text-lg"
+                  : ""
+              }
+            >
+             About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/blog"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-slate-600 underline font-bold text-lg"
+                  : ""
+              }
+            >
+             Blog
             </NavLink>
           </li>
           <li>

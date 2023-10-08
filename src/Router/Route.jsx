@@ -4,6 +4,7 @@ import Root from "../Root/Root";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Details from "../Pages/Details/Details";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -11,6 +12,7 @@ const router =createBrowserRouter([
     {
         path:"/",
         element:<Root></Root>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:"/",
