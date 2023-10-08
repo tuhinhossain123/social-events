@@ -1,12 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Header/Banner/Banner";
 import Services from "../../components/Services/Services";
+import OurTeam from "../OurTeam/OurTeam";
 
 const Home = () => {
   const services = useLoaderData();
   return (
     <div>
       <Banner></Banner>
+     
       <div className="mt-16">
         <div>
           <h2 className="text-4xl text-center font-sans font-bold">Our Service</h2>
@@ -16,7 +18,9 @@ const Home = () => {
             <Services key={service.id} service={service}></Services>
           ))}
         </div>
+
       </div>
+       <OurTeam></OurTeam>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-/* eslint-disable no-constant-condition */
+
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -7,12 +7,22 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const [passError, setPassError] = useState("");
+  const [error, setError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    if (!/^.{6,}$/.test(password)) {
+      setError("password mus be 6 charecter");
+      return;
+    } else if (!/.+[A-Z].+/.test(password)) {
+      setError("password must 1 capetial leeter");
+      return;
+    } else if (!/.+[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-=].+/.test(password)) {
+      setError("password must be 1 spcial charecter");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -20,10 +30,8 @@ const Register = () => {
         toast("User Registration successfully");
       })
       .catch((error) => {
+        toast.error(error);
         console.error(error);
-        if (!/[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
-        setPassError("fhasdhfbjashdfbhasfb");
-        }
       });
   };
   return (
@@ -70,7 +78,7 @@ const Register = () => {
                   className="input input-bordered"
                   required
                 />
-              <p>{passError}</p>
+                <p className="text-red-500">{error}</p>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?

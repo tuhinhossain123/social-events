@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
+
 const Details = () => {
   const details = useLoaderData();
   const { id } = useParams();
