@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
@@ -13,8 +13,7 @@ const Login = () => {
     singIn(email, password)
       .then((result) => {
         console.log(result.user);
-        e.target.reset();
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -80,6 +79,7 @@ const Login = () => {
                 </button>
               </div>
             </form>
+          
             <p>
               New here?{" "}
               <Link

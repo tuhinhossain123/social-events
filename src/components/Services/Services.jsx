@@ -24,7 +24,7 @@ const Services = ({ service }) => {
               <p>{short_description}</p>
             )}
 
-            <p className="text-xl font-semibold">${price}</p>
+            <p className="text-xl font-semibold pb-3">${price}</p>
             <Link to={`/details/${id}`}>
               <button className="btn bg-gray-400 text-white font-semibold w-full">
                 {button}

@@ -1,4 +1,3 @@
-
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -13,14 +12,16 @@ const Register = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    setError("")
+    
     if (!/^.{6,}$/.test(password)) {
-      setError("password mus be 6 charecter");
+      setError("password mus be 6 characters");
       return;
     } else if (!/.+[A-Z].+/.test(password)) {
-      setError("password must 1 capetial leeter");
+      setError("password must 1 capital letter");
       return;
     } else if (!/.+[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-=].+/.test(password)) {
-      setError("password must be 1 spcial charecter");
+      setError("password must be 1 special characters");
       return;
     }
 
