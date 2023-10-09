@@ -40,7 +40,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="hero ">
+    <div className="hero " data-aos="zoom-in-right">
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-2xl font-bold">Please Register</h1>

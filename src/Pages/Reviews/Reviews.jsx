@@ -3,7 +3,7 @@ const Reviews = () => {
     <div className="mt-10 mb-20 px-10">
       <h2 className="text-3xl font-serif font-semibold">Clients Review</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
-        <div className="bg-gray-100 p-5 rounded">
+        <div className="bg-gray-100 p-5 rounded" data-aos="flip-down">
           <h3>
             Thank you so much for the beautiful arrangement! It's absolutely
             stunning and brightened up my day.
@@ -20,7 +20,7 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-100 p-5 rounded">
+        <div className="bg-gray-100 p-5 rounded" data-aos="flip-down">
           <h3>
             Thank you so much for the beautiful arrangement! It's absolutely
             stunning and brightened up my day.
@@ -37,7 +37,7 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-100 p-5 rounded">
+        <div className="bg-gray-100 p-5 rounded" data-aos="flip-down">
           <h3>
             Thank you so much for the beautiful arrangement! It's absolutely
             stunning and brightened up my day.

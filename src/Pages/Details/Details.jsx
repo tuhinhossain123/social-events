@@ -13,10 +13,10 @@ const Details = () => {
         <img
           src={detail.img}
           alt=""
-          className="w-4/5 h-2/4 mx-auto rounded-lg shadow-2xl my-6"
+          className="w-4/5 h-2/4 mx-auto rounded-lg shadow-2xl my-6" data-aos="zoom-out-right"
         />
       </div>
-      <div>
+      <div className=""  data-aos="zoom-in-left">
         <h2 className="text-3xl text-center font-bold underline italic mb-4 mt-4">
           {detail.name}
         </h2>

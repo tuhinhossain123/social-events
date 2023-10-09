@@ -6,7 +6,7 @@ const Services = ({ service }) => {
   return (
     <div>
       <section className="">
-        <div className=" space-y-2 py-3 shadow-2xl rounded-lg ">
+        <div className=" space-y-2 py-3 shadow-2xl rounded-lg " data-aos="zoom-in-up">
           <div className=" flex flex-col items-center">
             <img className="w-[368px] h-[245px]" src={img} alt="" />
           </div>

@@ -8,8 +8,9 @@ const Banner = () => {
             "url(https://i.ibb.co/415PJFt/kate-trysh-ZUWls-b-Dg-Ak-unsplash.jpg)",
         }}
       >
-        <div className="hero-overlay bg-white bg-opacity-30"></div>
-        <div className="hero-content text-center text-neutral-content">
+        <div className="hero-content text-center text-neutral-content" data-aos="fade-up"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
           <div className="">
             <h1 className="mb-10 text-5xl font-bold text-white font-mono">
               Creating Memorable Moments Your Premier <br /> Social Event

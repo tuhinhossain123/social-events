@@ -1,14 +1,12 @@
 const OurPackage = () => {
   return (
-    <div className="mt-16 px-10">
+    <div className="mt-16 px-10" data-aos-easing="ease-in-sine">
       <h2 className="text-5xl text-center font-serif">Management Package</h2>
       <p className="text-center font-mono text-2xl pt-4">Choose Yours</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
         <div className="  p-8 shadow-2xl rounded">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-              Wedding Package
-            </h2>
+          <div className="" data-aos="fade-left" data-aos="fade-up">
+            <h2 className="text-2xl font-semibold">Wedding Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 5000</span>{" "}
               /Per day
@@ -23,10 +21,8 @@ const OurPackage = () => {
           </div>
         </div>
         <div className=" shadow-2xl rounded p-8">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-              Birthday Package
-            </h2>
+          <div className="space-y-5" data-aos="fade-left" data-aos="fade-up">
+            <h2 className="text-2xl font-semibold">Birthday Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 500</span>{" "}
               /Per day
@@ -41,10 +37,8 @@ const OurPackage = () => {
           </div>
         </div>
         <div className=" shadow-2xl rounded p-8">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-            Anniversaries Package
-            </h2>
+          <div className="space-y-5" data-aos="fade-left" data-aos="fade-up">
+            <h2 className="text-2xl font-semibold">Anniversaries Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 2000</span>{" "}
               /Per day
@@ -59,10 +53,8 @@ const OurPackage = () => {
           </div>
         </div>
         <div className=" shadow-2xl rounded p-8">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-            Engagement  Package
-            </h2>
+          <div className="space-y-5" data-aos="fade-left" data-aos="fade-up">
+            <h2 className="text-2xl font-semibold">Engagement Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 3000</span>{" "}
               /Per day
@@ -76,11 +68,15 @@ const OurPackage = () => {
             </ul>
           </div>
         </div>
-        <div className="shadow-2xl rounded p-8">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-            Retirement Package
-            </h2>
+        <div
+          className="shadow-2xl rounded p-8"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
+          <div className="space-y-5" data-aos="fade-left" data-aos="fade-up">
+            <h2 className="text-2xl font-semibold">Retirement Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 800</span>{" "}
               /Per day
@@ -95,10 +91,13 @@ const OurPackage = () => {
           </div>
         </div>
         <div className="shadow-2xl rounded p-8">
-          <div className="space-y-5">
-            <h2 className="text-2xl font-semibold">
-            Baby shower Package
-            </h2>
+          <div
+            className="space-y-5"
+            data-aos="fade-left"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            <h2 className="text-2xl font-semibold">Baby shower Package</h2>
             <h1>
               <span className="text-red-400 font-mono text-2xl">$ 1200</span>{" "}
               /Per day
