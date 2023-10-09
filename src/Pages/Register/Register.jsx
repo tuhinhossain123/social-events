@@ -19,17 +19,18 @@ const Register = () => {
     setError("");
 
     if (!/^.{6,}$/.test(password)) {
-      setError('password mus be 6 character');
+      setError('password must be 6 character');
       return;
     }
 
     if (!/.*[A-Z].*/.test(password)) {
-      setError('password mus 1 capital letter');
+      setError('password must 1 capital letter');
       return;
     }
 
     if (!/.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-=].*/.test(password)) {
-      setError('password mus be 1 special character');
+      setError('password must be 1 special character');
+      return;
     }
 
     
