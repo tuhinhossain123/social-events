@@ -5,7 +5,7 @@ const Details = () => {
   const details = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
-  const detail = details.find((detail) => detail.id === idInt);
+  const detail = details?.find((detail) => detail.id == idInt);
   console.log(detail);
   return (
     <div className="lg:flex rounded p-8 shadow-inner mb-4">

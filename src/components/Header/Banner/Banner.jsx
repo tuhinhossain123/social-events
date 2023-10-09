@@ -6,7 +6,7 @@ const Banner = () => {
       <div
         className="hero w-full min-h-screen"
         style={{
-          backgroundImage: "url(https://i.ibb.co/9GHHRgb/banner.webp)",
+          backgroundImage: "url(https://i.ibb.co/bdkVF2t/DSC-9072.jpg)",
         }}
       >
         <div className="hero-overlay bg-white bg-opacity-30"></div>

@@ -4,7 +4,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+ 
 
   const handleLogOut = () => {
     logOut()
@@ -38,7 +38,7 @@ const Navbar = () => {
           {user ? (
             <li>
               <NavLink
-                to="/details/"
+                to="/details"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -71,7 +71,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/blog"
+                  to="/review"
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
@@ -80,7 +80,7 @@ const Navbar = () => {
                       : ""
                   }
                 >
-                  Blog
+                  Review
                 </NavLink>
               </li>
             </>

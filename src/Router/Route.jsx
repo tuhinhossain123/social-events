@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import Details from "../Pages/Details/Details";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivetRout from "../components/Routes/PrivetRout";
+import About from "../Pages/About/About";
+import Reviews from "../Pages/Reviews/Reviews";
 
 
 
@@ -18,12 +20,12 @@ const router =createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                loader: ()=> fetch("events.json"),
+                loader: ()=> fetch("../events.json"),
             },
             {
                 path:"/details/:id",
                 element:<PrivetRout><Details></Details></PrivetRout>,
-                loader: ()=> fetch("events.json")
+                loader: ()=> fetch("../events.json")
             },
             {
                 path:"/register",
@@ -37,6 +39,16 @@ const router =createBrowserRouter([
                 path:"/login",
                 element:<Login></Login>
             },
+            {
+                path:"/about",
+                element:<PrivetRout><About></About></PrivetRout>
+            },
+            
+            {
+                path:"/review",
+                element:<PrivetRout><Reviews></Reviews></PrivetRout>
+            },
+
         ]
     },
 ])
