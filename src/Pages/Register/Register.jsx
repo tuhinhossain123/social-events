@@ -18,7 +18,7 @@ const Register = () => {
     console.log(name, imgUrl, email, password);
     setError("");
 
-    const passError = /^[A-Za-z\d@$!%*#?&]{8,}$/;
+    const passError = /^[A-Za-z\d@$!%*#?&]{6,}$/;
 
     if (!passError.test(password)) {
       setError("password must be 6 character,one uppercase and one special character");

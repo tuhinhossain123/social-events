@@ -17,6 +17,7 @@ const Login = () => {
     const password = e.target.password.value;
     setError();
 
+
     singIn(email, password)
       .then((result) => {
         console.log(result.user);
