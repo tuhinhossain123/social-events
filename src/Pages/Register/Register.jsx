@@ -1,34 +1,38 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const imgUrl = e.target.text.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    setError("")
-    
-    if (!/^.{6,}$/.test(password)) {
-      setError("password mus be 6 characters");
+    console.log(name, imgUrl, email, password);
+    setError("");
+
+    const passError = /^[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    if (!passError.test(password)) {
+      setError("password must be 6 character,one uppercase and one special character");
       return;
-    } else if (!/.+[A-Z].+/.test(password)) {
-      setError("password must 1 capital letter");
-      return;
-    } else if (!/.+[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-=].+/.test(password)) {
-      setError("password must be 1 special characters");
-      return;
+
     }
 
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
         toast("User Registration successfully");
+        updateProfile(result.user, { displayName: name, photoURL: imgUrl });
+        e.target.reset();
+        navigate("/")
       })
       .catch((error) => {
         toast.error(error);
@@ -52,6 +56,18 @@ const Register = () => {
                   type="text"
                   placeholder="name"
                   name="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">img url</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="img url"
+                  name="text"
                   className="input input-bordered"
                   required
                 />

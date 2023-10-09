@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="p-5 mb-10">
+    <div className="p-5 mb-10 px-10">
       <h1 className="text-3xl text-center font-semibold">About Us</h1>
       <p className="text-lg mt-5 text-center">
         At [Your Social Event Management Company Name], we believe that every

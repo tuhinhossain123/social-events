@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { id } = useParams();
+  console.log(id);
 
   const handleLogOut = () => {
     logOut()
@@ -22,31 +24,27 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-slate-600 underline font-bold text-lg"
+              ? "text-slate-600 underline font-medium"
               : ""
           }
         >
           Home
         </NavLink>
       </li>
-      {user ? (
-        <li>
-          <NavLink
-            to="/details"
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? "text-slate-600 underline font-bold text-lg"
-                : ""
-            }
-          >
-            Details
-          </NavLink>
-        </li>
-      ) : (
-        ""
-      )}
+      <li>
+        <NavLink
+          to={`/details/${id}`}
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-slate-600 underline font-medium"
+              : ""
+          }
+        >
+          Details
+        </NavLink>
+      </li>
       {user && (
         <>
           <li>
@@ -56,7 +54,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-slate-600 underline font-bold text-lg"
+                  ? "text-slate-600 underline font-medium"
                   : ""
               }
             >
@@ -70,7 +68,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-slate-600 underline font-bold text-lg"
+                  ? "text-slate-600 underline font-medium"
                   : ""
               }
             >
@@ -86,7 +84,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-slate-600 underline font-bold"
+              ? "text-slate-600 underline font-medium"
               : ""
           }
         >
@@ -100,7 +98,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-slate-600 underline font-bold"
+              ? "text-slate-600 underline font-medium"
               : ""
           }
         >
@@ -147,22 +145,25 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-             <div className="flex">
-             <div className="hidden  md:flex items-center">
-                <span className="mr-4">{user.email}</span>
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
-                    <img src={user?.photoURL} />
-                  </div>
-                </label>
+              <div className="flex">
+                <div className="hidden  md:flex items-center">
+                  <span className="mr-4">{user.email}</span>
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full">
+                      <img src={user?.photoURL} />
+                    </div>
+                  </label>
+                </div>
+                <button
+                  onClick={handleLogOut}
+                  className="btn bg-[#02a388] text-white"
+                >
+                  Sing Out
+                </button>
               </div>
-              <button
-                onClick={handleLogOut}
-                className="btn bg-[#02a388] text-white"
-              >
-                Sing Out
-              </button>
-             </div>
             </>
           ) : (
             <Link to="/login">

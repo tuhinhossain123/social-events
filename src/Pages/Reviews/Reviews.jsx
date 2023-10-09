@@ -1,6 +1,6 @@
 const Reviews = () => {
   return (
-    <div className="mt-10 mb-20">
+    <div className="mt-10 mb-20 px-10">
       <h2 className="text-3xl font-serif font-semibold">Clients Review</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
         <div className="bg-gray-100 p-5 rounded">

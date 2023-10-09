@@ -5,18 +5,29 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { singIn, singInWithGoogle } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [emailError, setEmail] = useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    setEmail();
+    setError();
+
     singIn(email, password)
       .then((result) => {
         console.log(result.user);
+        setSuccess("user Create Successfully");
+        e.target.reset();
         navigate("/");
       })
       .catch((error) => {
         console.error(error);
+
+        setError("password don't match");
+        setEmail("email don't match");
       });
   };
 
@@ -61,6 +72,9 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
+                {error && <p className="text-red-500">{error}</p>}
+                {emailError && <p>{emailError}</p>}
+                {success && <p className="text-green-500">{success}</p>}
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
@@ -79,7 +93,7 @@ const Login = () => {
                 </button>
               </div>
             </form>
-          
+
             <p>
               New here?{" "}
               <Link
