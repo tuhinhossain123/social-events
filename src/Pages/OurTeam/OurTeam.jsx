@@ -1,6 +1,6 @@
 const OurTeam = () => {
   return (
-    <div className="mt-16">
+    <div className="mt-16 px-10 ">
       <h2 className="text-5xl text-center font-serif">Our Team</h2>
       <p className="text-center font-mono text-2xl pt-4">Organizers</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center space-y-5 mt-5 mb-20">

@@ -4,7 +4,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
- 
 
   const handleLogOut = () => {
     logOut()
@@ -14,16 +13,45 @@ const Navbar = () => {
       });
   };
 
-  return (
-    <div>
-      <nav className="flex flex-col md:flex-row space-x-6 py-5 justify-between items-center">
-        <h2 className="text-xl font-serif font-semibold text-orange-500">
-          Social Events
-        </h2>
-        <ul className="flex flex-row md:flex-row pr-5 gap-10">
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-slate-600 underline font-bold text-lg"
+              : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      {user ? (
+        <li>
+          <NavLink
+            to="/details"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-slate-600 underline font-bold text-lg"
+                : ""
+            }
+          >
+            Details
+          </NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+      {user && (
+        <>
           <li>
             <NavLink
-              to="/"
+              to="/about"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "pending"
@@ -32,108 +60,117 @@ const Navbar = () => {
                   : ""
               }
             >
-              Home
+              About
             </NavLink>
           </li>
-          {user ? (
-            <li>
-              <NavLink
-                to="/details"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-slate-600 underline font-bold text-lg"
-                    : ""
-                }
+          <li>
+            <NavLink
+              to="/review"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-slate-600 underline font-bold text-lg"
+                  : ""
+              }
+            >
+              Review
+            </NavLink>
+          </li>
+        </>
+      )}
+      <li>
+        <NavLink
+          to="/register"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-slate-600 underline font-bold"
+              : ""
+          }
+        >
+          Register
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/login"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-slate-600 underline font-bold"
+              : ""
+          }
+        >
+          Login
+        </NavLink>
+      </li>
+    </>
+  );
+  return (
+    <div className="px-10">
+      <div className="navbar bg-base-100">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Details
-              </NavLink>
-            </li>
-          ) : (
-            ""
-          )}
-          {user && (
-            <>
-              <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-slate-600 underline font-bold text-lg"
-                      : ""
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/review"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-slate-600 underline font-bold text-lg"
-                      : ""
-                  }
-                >
-                  Review
-                </NavLink>
-              </li>
-            </>
-          )}
-          <li>
-            <NavLink
-              to="/register"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? "pending"
-                  : isActive
-                  ? "text-slate-600 underline font-bold"
-                  : ""
-              }
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              Register
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? "pending"
-                  : isActive
-                  ? "text-slate-600 underline font-bold"
-                  : ""
-              }
-            >
-              Login
-            </NavLink>
-          </li>
-        </ul>
-        <div className="flex items-center">
+              {links}
+            </ul>
+          </div>
+          <h2 className="text-xl font-serif font-semibold text-orange-500">
+            Social Events
+          </h2>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{links}</ul>
+        </div>
+        <div className="navbar-end">
           {user ? (
             <>
-              <span className="mr-4">{user.email}</span>
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} />
-                </div>
-              </label>
-              <button onClick={handleLogOut} className="btn btn-ghost">
+             <div className="flex">
+             <div className="hidden  md:flex items-center">
+                <span className="mr-4">{user.email}</span>
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-[#02a388] text-white"
+              >
                 Sing Out
               </button>
+             </div>
             </>
           ) : (
             <Link to="/login">
-              <button className="btn btn-ghost">Login</button>
+              <button className="btn bg-[#02a388] text-white">Login</button>
             </Link>
           )}
         </div>
-      </nav>
+      </div>
     </div>
   );
 };

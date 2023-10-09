@@ -1,6 +1,6 @@
 const OurPackage = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-16 px-10">
       <h2 className="text-5xl text-center font-serif">Management Package</h2>
       <p className="text-center font-mono text-2xl pt-4">Choose Yours</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">

@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
      
-      <div className="mt-16">
+      <div className="mt-16 px-10">
         <div>
           <h2 className="text-5xl text-center font-serif">Our Service</h2>
         </div>

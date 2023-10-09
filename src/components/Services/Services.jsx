@@ -11,7 +11,10 @@ const Services = ({ service }) => {
             <img className="w-[368px] h-[245px]" src={img} alt="" />
           </div>
           <div className="w-72 mx-auto space-y-2">
-            <h2 className="text-2xl font-bold ">{name}</h2>
+           <div className="flex item-center justify-between mb-2">
+           <h2 className="text-xl font-bold ">{name}</h2>
+            <p className="text-xl font-semibold">${price}</p>
+           </div>
 
             {short_description.length > 80 ? (
               <p className="text-slate-500">
@@ -21,12 +24,12 @@ const Services = ({ service }) => {
                 </Link>
               </p>
             ) : (
-              <p>{short_description}</p>
+              <p className="">{short_description}</p>
             )}
 
-            <p className="text-xl font-semibold pb-3">${price}</p>
+            
             <Link to={`/details/${id}`}>
-              <button className="btn bg-gray-400 text-white font-semibold w-full">
+              <button className="btn bg-gray-400 text-white font-semibold w-full mt-5 mb-3">
                 {button}
               </button>
             </Link>

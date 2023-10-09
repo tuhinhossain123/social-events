@@ -1,8 +1,6 @@
-
-
 const Banner = () => {
-    return (
-        <div className=" h-[100vh] mb-10">
+  return (
+    <div className="w-full h-[100vh] border-2">
       <div
         className="hero w-full min-h-screen"
         style={{
@@ -19,7 +17,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Banner;
