@@ -18,13 +18,21 @@ const Register = () => {
     console.log(name, imgUrl, email, password);
     setError("");
 
-    const passError = /^[A-Za-z\d@$!%*#?&]{6,}$/;
-
-    if (!passError.test(password)) {
-      setError("password must be 6 character,one uppercase and one special character");
+    if (!/^.{6,}$/.test(password)) {
+      setError('password mus be 6 character');
       return;
-
     }
+
+    if (!/.*[A-Z].*/.test(password)) {
+      setError('password mus 1 capital letter');
+      return;
+    }
+
+    if (!/.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-=].*/.test(password)) {
+      setError('password mus be 1 special character');
+    }
+
+    
 
     createUser(email, password)
       .then((result) => {
@@ -37,6 +45,7 @@ const Register = () => {
       .catch((error) => {
         toast.error(error);
         console.error(error);
+       
       });
   };
   return (
