@@ -8,9 +8,9 @@
 * In addition to the email password, the website can be logged in trough the Google account.
 
   ## Technologies
-  . Html
-  . Tailwind
-  . Daisy Ui
-  . JavaScript
-  . React
-  . firebase
+  - Html
+  - Tailwind
+  - Daisy Ui
+  - JavaScript
+  - React
+  - firebase
